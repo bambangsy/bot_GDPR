@@ -12,7 +12,7 @@ from langchain.chains import RetrievalQA
 
 
 # Load .env file
-l#oad_dotenv()
+#oad_dotenv()
 
 doc_reader = PdfReader("text.pdf")
 
