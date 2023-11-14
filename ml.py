@@ -5,14 +5,14 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.vectorstores import faiss
 import os
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 from langchain.chains.question_answering import load_qa_chain
 from langchain.llms import openai
 from langchain.chains import RetrievalQA
 
 
 # Load .env file
-load_dotenv()
+l#oad_dotenv()
 
 doc_reader = PdfReader("text.pdf")
 
@@ -29,7 +29,7 @@ text_splitter = CharacterTextSplitter(
     length_function = len,
 )
 texts = text_splitter.split_text(raw_text)
-embeddings = OpenAIEmbeddings()
+embeddings = OpenAIEmbeddings("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")
 
 docsearch = faiss.FAISS.from_texts(texts,embeddings)
 
