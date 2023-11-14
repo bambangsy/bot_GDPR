@@ -34,7 +34,7 @@ embeddings = OpenAIEmbeddings(openai_api_key=st.secrets["openai_api_key"])
 docsearch = faiss.FAISS.from_texts(texts,embeddings)
 
 retriever = docsearch.as_retriever(search_type="similarity", search_kwargs={"k":4})
-rqa = RetrievalQA.from_chain_type(llm=openai.OpenAI(),
+rqa = RetrievalQA.from_chain_type(llm=openai.OpenAI(openai_api_key=st.secrets["openai_api_key"]),
                                   chain_type="stuff",
                                   retriever=retriever,
                                   return_source_documents= True)
