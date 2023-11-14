@@ -29,7 +29,7 @@ text_splitter = CharacterTextSplitter(
     length_function = len,
 )
 texts = text_splitter.split_text(raw_text)
-embeddings = OpenAIEmbeddings("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")
+embeddings = OpenAIEmbeddings(openai_api_key="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")
 
 docsearch = faiss.FAISS.from_texts(texts,embeddings)
 
