@@ -1,5 +1,6 @@
 ###############################################
 #LOGIC
+from PyPDF2 import PdfFileReader, PdfFileWriter
 from PyPDF2 import PdfReader
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.text_splitter import CharacterTextSplitter
@@ -29,6 +30,8 @@ text_splitter = CharacterTextSplitter(
     length_function = len,
 )
 texts = text_splitter.split_text(raw_text)
+
+print(texts)
 embeddings = OpenAIEmbeddings(openai_api_key=st.secrets["openai_api_key"])
 
 docsearch = faiss.FAISS.from_texts(texts,embeddings)

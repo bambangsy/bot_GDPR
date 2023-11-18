@@ -3,7 +3,7 @@ import time
 from ml import rqa
 
 
-st.title(f"CHATBOT :blue[GDPR] 🤖")
+st.title(f"TANYA :blue[GDPR] 🤖")
 prompt = st.chat_input("Say something")
 if prompt:
     st.subheader(f"Pertanyaan: ")
